@@ -8,7 +8,7 @@ const verifyUser = async (req, res, next) => {
   const { name, email } = req.body;
 
   const existedUser = await User.findOne({
-    $or: [{ email }, { name }],
+    email,
   });
 
   if (existedUser) {
@@ -22,7 +22,7 @@ const showJoinUsPage = (req, res) => {
 };
 
 const showThankYouPage = (req, res) => {
-  res.send("<h1>Thanks for joining us</h1>");
+  res.sendFile("thankyou.html", { root: "public" });
 };
 
 const submitJoinUsForm = asyncHandler(async (req, res) => {

@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const closeBtn = document.querySelectorAll(".close-btn");
   const hometest = document.getElementById("home-test");
-
+  const formSubmitBtn = document.getElementById("form-submit");
+  const successSection = document.getElementById("success-section");
   houseCleanBtn.addEventListener("click", () => {
     console.log("button clicked ");
     bookPageToggle.classList.remove("hidden");
@@ -25,5 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       gardenBookPageToggle.classList.add("hidden");
     });
+  });
+
+  formSubmitBtn.addEventListener("click", () => {
+    successSection.classList.remove("hidden");
   });
 });
